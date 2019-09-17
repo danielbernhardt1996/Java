@@ -1,0 +1,40 @@
+package se.Nackademin;
+
+class Kortlek {
+    // Creates a cardstack with 52 cards
+    
+    private Kort[] bunt = new Kort[52];
+    private int antal = 0;
+
+   
+    public int getAntal() {
+        return antal;
+    }
+
+    public void laggOverst(Kort k) {
+        bunt[antal] = k;
+        antal++;
+    }
+
+    public Kort geOversta() {
+        antal--;
+        return bunt[antal];
+    }
+
+ 
+    public void skapaKortlek() {
+        for (int f = 1; f <= 4; f++)
+            for (int v = 1; v <= 13; v++)
+                laggOverst(new Kort(f, v));
+    }
+
+    public void blanda() {
+        for (int i = 0; i < antal; i++) {
+            int n = i + (int) (Math.random() * (antal - i));
+            Kort a;
+            a = bunt[n];
+            bunt[n] = bunt[i];
+            bunt[i] = a;
+        }
+    }
+}
