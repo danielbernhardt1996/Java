@@ -1,0 +1,26 @@
+package se.Nackademin;
+
+// A card file
+
+class Kort {
+
+    private static String[] fargNamn = {"Hjarter", "Spader", "Ruter", "Klover"};
+    private static String[] valorNamn = {"Ess", "2", "3", "4", "5", "6", "7", "8", "9", "10", "Knekt", "Dam", "Kung"};
+
+    private int f, v;
+
+    public Kort(int farg, int valor) {
+        if (farg < 1 || farg > 4 || valor > 13) {
+            System.out.println("fel");
+            System.exit(1);
+        }
+        f = farg;
+        v = valor;
+    }
+    public int geFarg() { return f; }
+    public int geValor() { return v;}
+    public String toString() {
+
+        return fargNamn[f - 1] + " " + valorNamn[v - 1];
+    }
+}
