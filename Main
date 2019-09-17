@@ -1,0 +1,13 @@
+package se.Nackademin;
+
+public class Main {
+    public static void main(String[] args) {
+        Kortlek kortlek = new Kortlek();
+        kortlek.skapaKortlek();
+        kortlek.blanda();
+        Kort k = kortlek.geOversta();
+        System.out.println(k.toString());
+    }
+}
+
+
